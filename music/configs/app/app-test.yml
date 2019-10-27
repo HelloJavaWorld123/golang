@@ -1,0 +1,4 @@
+app:
+  name: application-app
+http:
+  port: 18808
