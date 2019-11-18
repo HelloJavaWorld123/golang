@@ -11,8 +11,8 @@ func Detail(id int64) *modules.User {
 	stmt, e := mysql.Template.Prepare(sql)
 	checkErr(e)
 	rows, e := stmt.Query()
-	defer rows.Close()
 	checkErr(e)
+	defer rows.Close()
 
 	if rows.Next() {
 	}
