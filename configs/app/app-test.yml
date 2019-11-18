@@ -5,4 +5,8 @@ http:
 database:
   username: root
   password: admin
-  url: jdbc://mysql:localhost:3306/test
+  hostAndIp: localhost:3306
+  dataBaseName: test
+  maxIdle: 10
+  maxOpenConnection: 20
+  maxLifeTime: 180

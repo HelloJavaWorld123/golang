@@ -1,11 +1,26 @@
 package userdao
 
 import (
-	"database/sql"
-	"music/internal/pkg/modules"
+	"golang/internal/dao/mysql"
+	"golang/internal/pkg/modules"
+	"log"
 )
 
 func Detail(id int64) *modules.User {
-	sql.Open("mysql", "test")
+	sql := "SELECT * FROM person"
+	stmt, e := mysql.Template.Prepare(sql)
+	checkErr(e)
+	rows, e := stmt.Query()
+	defer rows.Close()
+	checkErr(e)
+
+	if rows.Next() {
+	}
 	return &modules.User{Id: 1, NickName: "测试姓名"}
+}
+
+func checkErr(e error) {
+	if e != nil {
+		log.Fatal(e)
+	}
 }
