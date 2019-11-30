@@ -2,17 +2,14 @@ package modules
 
 import "time"
 
-/**
-userdao 实体
-*/
 type User struct {
-	Id         int64
-	NickName   string
-	Telephone  string
-	HeadUrl    string
-	Province   string
-	City       string
-	Country    string
-	CreateDate time.Time
-	UpdateDate time.Time
+	Id         int64     `json:"id"`
+	NickName   string    `json:"nick_name"`
+	Telephone  string    `json:"telephone"`
+	HeadUrl    string    `json:"head_url"`
+	Province   string    `json:"province"`
+	City       string    `json:"city"`
+	Country    string    `json:"country"`
+	CreateDate time.Time `json:"create_date"`
+	UpdateDate time.Time `json:"update_date"`
 }

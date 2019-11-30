@@ -2,8 +2,8 @@ package user
 
 import (
 	"container/list"
-	"music/internal/dao/mysql/userdao"
-	"music/internal/pkg/modules"
+	"golang/internal/dao/mysql/userdao"
+	"golang/internal/pkg/modules"
 )
 
 /**
@@ -29,7 +29,7 @@ type Service interface {
 }
 
 //入参
-type UserVo struct {
+type Vo struct {
 	Id        int64
 	NickName  string
 	HeadUrl   string
@@ -41,27 +41,27 @@ type UserVo struct {
 
 //方法
 //接收者 包括值接收者 和 指针接收者
-func (userVo UserVo) Delete() (bool, error) {
+func (userVo Vo) Delete() (bool, error) {
 	panic("implement me")
 }
 
-func (userVo UserVo) Update() (bool, error) {
+func (userVo Vo) Update() (bool, error) {
 	panic("implement me")
 }
 
-func (userVo UserVo) Insert() (bool, error) {
+func (userVo Vo) Insert() (bool, error) {
 	panic("implement me")
 }
 
-func (userVo UserVo) InsertAndGetId() (int64, error) {
+func (userVo Vo) InsertAndGetId() (int64, error) {
 	panic("implement me")
 }
 
-func (userVo UserVo) List() (list.Element, error) {
+func (userVo Vo) List() (list.Element, error) {
 	panic("implement me")
 }
 
-func (userVo UserVo) Detail() (*modules.User, error) {
+func (userVo Vo) Detail() (*modules.User, error) {
 	user := userdao.Detail(userVo.Id)
 	return user, nil
 }
